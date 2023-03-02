@@ -5,8 +5,7 @@ import useMediaQuery from "./hooks/useMediaQuery";
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
   //determines what page ur on
-  const [isAboveMediumScreens, setisAboveMediumScreens] =
-    useMediaQuery("(min-width:1060px)");
+ const isAboveMedium = useMediaQuery("(min-width: 1060px)");
   //determines if ur on a medium screen or not
   return (
     <div className="app bg-deep-blue">

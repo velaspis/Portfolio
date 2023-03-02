@@ -1,20 +1,6 @@
-import React from "react";
-import { useState } from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import React, { useState } from "react";
 import useMediaQuery from "../hooks/useMediaQuery";
-const link =({page,selectedPage,setSelectedPage})=>{
-    const lowerCasePage = page.toLowerCase();
-    return (
-        <AnchorLink
-        className={`${selectedPage===lowerCasePage ? "text-yellow" :"text-white"}
-        hover:text-yellow transition duration-500`}
-        href={`#${lowerCasePage}`} 
-        onClick={() => {setSelectedPage(lowerCasePage)}}
-        >
-            {page}
-        </AnchorLink>
-    )
-}
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Navbar = ({ selectedPage, setSelectedPage }) => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
@@ -28,10 +14,18 @@ const Navbar = ({ selectedPage, setSelectedPage }) => {
 
         {isAboveSmallscreens ? (
           <div className="flex justify-between gap-16 font-opensans text-sm font-semibold">
-          <link 
-          page="Home"
-          selectedPage={selectedPage}
-          setSelectedPage={selectedPage} />
+            <AnchorLink
+              className={`${
+                selectedPage === "home" ? "text-yellow" : "text-white"
+              }
+                  hover:text-yellow transition duration-500`}
+              href="#home"
+              onClick={() => {
+                setSelectedPage("home");
+              }}
+            >
+              Home
+            </AnchorLink>
           </div>
         ) : (
           <div></div>
