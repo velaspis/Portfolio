@@ -54,7 +54,7 @@ const Contact = () => {
           }}
           className="basis-1/2 flex justify-center"
         >
-          <img src={contact} />
+          <img src={contact} alt="peep" />
         </motion.div>
 
         <motion.div
