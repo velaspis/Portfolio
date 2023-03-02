@@ -1,4 +1,6 @@
 import React from "react";
+import menu from "../assets/menu-icon.svg";
+import close from "../assets/close-icon.svg";
 import { useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../hooks/useMediaQuery";
@@ -16,7 +18,7 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
   );
 };
 
-const Navbar = ({ isTopOfPage,selectedPage, setSelectedPage }) => {
+const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
   const [menuToggled, setMenuToggled] = useState(false);
   const isAboveSmallscreens = useMediaQuery("(min-width:760px)");
   const navbarBackground = isTopOfPage ? "" : "bg-red";
@@ -56,20 +58,20 @@ const Navbar = ({ isTopOfPage,selectedPage, setSelectedPage }) => {
           </div>
         ) : (
           <button
-            className="rounded-full bg-red p-2"
+            className="rounded-full bg-purple p-2"
             onClick={() => setMenuToggled(!menuToggled)}
           >
-            <img alt="" src="./assets/menu-icon.svg" />
+            <img alt="" src={menu} />
           </button>
         )}
 
         {/*button popup*/}
         {!isAboveSmallscreens && menuToggled && (
-          <div className="fixed bottom-0 right-0 w-[300px] h-full bg-red">
+          <div className="fixed bottom-0 right-0 w-[300px] h-full bg-purple">
             {/*close icon */}
             <div className="flex justify-end p-">
               <button onClick={() => setMenuToggled(!menuToggled)}>
-                <img alt="close" src="./assets/close-icon.svg" />
+                <img alt="close" src={close} />
               </button>
             </div>
             {/*links*/}

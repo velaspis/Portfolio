@@ -1,9 +1,11 @@
 import Navbar from "./scenes/Navbar.jsx";
 import React, { useState, useEffect } from "react";
-
+import MySkills from "./scenes/MySkills";
 import useMediaQuery from "./hooks/useMediaQuery";
 import DotGroup from "./scenes/DotGroup";
 import Landing from "./scenes/Landing.jsx";
+import { motion } from "framer-motion";
+import LineGradient from "./components/LineGradient";
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
@@ -36,8 +38,22 @@ function App() {
             setSelectedPage={setSelectedPage}
           ></DotGroup>
         )}
-
+        <motion.div
+          margin="0 0 -200px 0"
+          amount="all"
+          onViewportEnter={() => setSelectedPage("home")}
+        ></motion.div>
         <Landing setSelectedPage={setSelectedPage} />
+        <LineGradient />
+        <div className="w-5/6 mx-auto md:h-full ">
+          <motion.div
+            margin="0 0 -200px 0"
+            amount="all"
+            onViewportEnter={() => setSelectedPage("skills")}
+          >
+            <MySkills />
+          </motion.div>
+        </div>
       </div>
     </div>
   );
