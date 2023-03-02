@@ -16,7 +16,7 @@ const Contact = () => {
       e.preventDefault();
     }
   };
-
+//comment
   return (
     <section id="contact" className="contact py-48">
       {/* HEADINGS */}
