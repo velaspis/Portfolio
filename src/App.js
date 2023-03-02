@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 
 import useMediaQuery from "./hooks/useMediaQuery";
 import DotGroup from "./scenes/DotGroup";
+import Landing from "./scenes/Landing.jsx";
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
@@ -35,6 +36,8 @@ function App() {
             setSelectedPage={setSelectedPage}
           ></DotGroup>
         )}
+
+        <Landing setSelectedPage={setSelectedPage} />
       </div>
     </div>
   );
