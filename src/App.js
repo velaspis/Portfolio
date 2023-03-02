@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./scenes/Navbar.jsx";
+import { useState } from "react";
+import useMediaQuery from "./hooks/useMediaQuery";
 
 function App() {
+  const [selectedPage, setSelectedPage] = useState("home");
+  //determines what page ur on
+  const [isAboveMediumScreens, setisAboveMediumScreens] =
+    useMediaQuery("(min-width:1060px)");
+  //determines if ur on a medium screen or not
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app bg-deep-blue">
+      <Navbar SelectedPage={selectedPage} setSelectedPage={setSelectedPage} />
     </div>
   );
 }
