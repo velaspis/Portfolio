@@ -6,6 +6,10 @@ import DotGroup from "./scenes/DotGroup";
 import Landing from "./scenes/Landing.jsx";
 import { motion } from "framer-motion";
 import LineGradient from "./components/LineGradient";
+import Projects from "./scenes/Projects";
+import Testimonials from "./scenes/Testimonials";
+import Footer from "./scenes/Footer";
+import Contact from "./scenes/Contact";
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
@@ -53,6 +57,38 @@ function App() {
           >
             <MySkills />
           </motion.div>
+          <LineGradient />
+          <div className="w-5/6 mx-auto">
+            <motion.div
+              margin="0 0 -200px 0"
+              amount="all"
+              onViewportEnter={() => setSelectedPage("projects")}
+            >
+              <Projects />
+            </motion.div>
+          </div>
+          <LineGradient />
+          <LineGradient />
+          <div className="w-5/6 mx-auto md:h-full">
+            <motion.div
+              margin="0 0 -200px 0"
+              amount="all"
+              onViewportEnter={() => setSelectedPage("testimonials")}
+            >
+              <Testimonials />
+            </motion.div>
+          </div>
+          <LineGradient />
+          <div className="w-5/6 mx-auto md:h-full">
+            <motion.div
+              margin="0 0 -200px 0"
+              amount="all"
+              onViewportEnter={() => setSelectedPage("contact")}
+            >
+              <Contact />
+            </motion.div>
+          </div>
+          <Footer />
         </div>
       </div>
     </div>
